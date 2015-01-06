@@ -215,10 +215,6 @@ int main(int argc, char* argv[]){
       else
          usage(argv[0]);
    }
-   bitFILE = fopen(bitFn, "w");
-   arrFILE = fopen(arrFn, "w");
-   if(bitFILE == NULL || arrFILE == NULL)
-      usage(argv[0]);
 
    // there's sbox 
    if(sbxFn){
@@ -241,6 +237,10 @@ int main(int argc, char* argv[]){
          SBOX[i] = tmp;
       }
    }
+   bitFILE = fopen(bitFn, "w");
+   arrFILE = fopen(arrFn, "w");
+   if(bitFILE == NULL || arrFILE == NULL)
+      usage(argv[0]);
 
    // writeArray version
    {
